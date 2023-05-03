@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import App from './App';
+import React from "react";
+import NewsFeed from "./NewsFeed";
 
-function App() {
+function MyComponent() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Component</h1>
+      <NewsFeed />
     </div>
   );
 }
+
+export default MyComponent;
+
 
 export default App;
