@@ -1,18 +1,17 @@
-import './App.css';
-import App from './App';
+
 import React from "react";
-import NewsFeed from "./NewsFeed";
+import NewsFeed from "./components/NewsFeed";
 
-function MyComponent() {
-  return (
-    <div>
-      <h1>My Component</h1>
-      <NewsFeed />
-    </div>
-  );
-}
 
-export default MyComponent;
-
+const App = () => {
+    return (
+      <div className="app">
+        <h1>Bitcoin Dashboard</h1>
+        <div className="app-wrapper">
+          <NewsFeed />
+        </div>
+      </div>
+    );
+  };
 
 export default App;

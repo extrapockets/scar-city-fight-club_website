@@ -50,3 +50,5 @@ function NewsFeed() {
     </div>
   );
 }
+
+export default NewsFeed;
