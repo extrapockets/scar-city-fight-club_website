@@ -1,21 +1,27 @@
-const express = require("express");
 const cors = require("cors");
-const fetch = require("node-fetch");
+const express = require("express");
+const Parser = require("rss-parser");
 
 const app = express();
+const port = 3001;
+
 app.use(cors());
 
 app.get("/rss", async (req, res) => {
   try {
-    const response = await fetch("https://nobsbitcoin.com/rss/");
-    const xml = await response.text();
-    res.set("Content-Type", "application/xml");
-    res.send(xml);
+    const parser = new Parser();
+    const feed = await parser.parseURL("https://nobsbitcoin.com/rss/");
+    const itemsHtml = feed.items.map((item) => {
+      return `<h3>${item.title}</h3><p>${item.contentSnippet}</p><a href="${item.link}">Read More</a>`;
+    });
+    const html = `<html><head><title>Bitcoin News</title></head><body>${itemsHtml.join("")}</body></html>`;
+    res.send(html);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error fetching RSS feed");
+    res.status(500).send("Internal Server Error");
   }
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
