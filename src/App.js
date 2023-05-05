@@ -5,7 +5,7 @@ import NewsFeed from "./components/NewsFeed";
 
 const newsFeeds = [
   {
-    name: "Bitcoin News",
+    name: "News:",
     url: "http://localhost:3001/rss",
   },
   // {
@@ -17,7 +17,7 @@ const newsFeeds = [
 const App = () => {
   return (
     <div className="app">
-      <h1>News Feed via No BS Bitcoin</h1>
+      <h1>ScarCityFight.Club</h1>
       <div className="app-wrapper">
         {newsFeeds.map((feed) => (
           <NewsFeed name={feed.name} url={feed.url} key={feed.name} />
