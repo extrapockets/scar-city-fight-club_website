@@ -1,60 +1,95 @@
+/* Set background color and font family for the whole page */
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color: #333;
-  background-color: #f9f9f9;
+  background-color: #202020; /* dark gray */
+  font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-button, input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.app-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.section {
-  margin-bottom: 2rem;
-}
-
-.app {
-  background-color: #fff;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+/* Style the header */
+header {
+  background-color: #f3930f; /* orange */
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 
-.btn {
-  display: inline-block;
+/* Style the logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff; /* white */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   margin-right: 1rem;
 }
 
-/* Media queries for responsive design */
-
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-  
-  .btn {
-    display: block;
-    margin-bottom: 1rem;
-  }
+/* Style the navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
 }
+
+.nav-links li {
+  margin-right: 1rem;
+}
+
+.nav-links a {
+  color: #fff; /* white */
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #eaeaea; /* light gray */
+}
+
+/* Style the NewsFeed component */
+.news-feed {
+  background-color: #292929; /* dark gray */
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.news-feed h2 {
+  color: #f3930f; /* orange */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.news-feed .text {
+  color: #d6d6d6; /* light gray */
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.news-feed .text a {
+  color: #f3930f; /* orange */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.news-feed .text a:hover {
+  color: #eaeaea; /* light gray */
+}
+
+
+/* Style the h1 element with the Teko font */
+h1 {
+  font-family: "Teko", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #f3930f;
+  text-align: center;
+  text-shadow: 0 0 10px #f3930f; 
+}
+
+/* Change the link color if it has been visited */
+.news-feed .text a:visited {
+  color: #c400c4; /* cyberpunk purple */
+}
+
