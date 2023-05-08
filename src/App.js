@@ -7,7 +7,8 @@ const newsFeeds = [
   {
     name: "News:",
     // change to URL for Render web service deployment
-    url: "http://localhost:3001/rss",
+    url: "https://scar-city-feed.onrender.com",
+    // url: "http://localhost:3001/rss",
   },
 ];
 
