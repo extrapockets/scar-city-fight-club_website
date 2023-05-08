@@ -14,9 +14,12 @@ const PORT = process.env.PORT || 3001;
 const allowedOrigins = [
   'http://localhost:3000',
   'https://scar-city-branch-csp-change1.onrender.com',
+  'https://scar-city-branch-csp-change1.onrender.com/rss',
   'https://nobsbitcoin.com',
   'https://inteltechniques.com',
-  'https://feeds.buzzsprout.com'
+  'https://feeds.buzzsprout.com',
+  'https://scar-city-fight-club-website-lxqidsuik-extrapockets.vercel.app/',
+  'https://scar-city-fight-club-website-ennuvopsd-extrapockets.vercel.app/'
 ];
 
 const corsOptions = {
