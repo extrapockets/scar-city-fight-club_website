@@ -10,7 +10,7 @@ app.use(cors());
 // Set the Content Security Policy
 // Render deployment:'self' is https://scar-city-feed.onrender.com;
 app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' https://nobsbitcoin.com/rss/ https://inteltechniques.com/blog/feed/ https://feeds.buzzsprout.com/1790481.rss");
+  res.setHeader('Content-Security-Policy', "default-src 'self' https://scar-city-branch-csp-change1.onrender.com https://nobsbitcoin.com/rss/ https://inteltechniques.com/blog/feed/ https://feeds.buzzsprout.com/1790481.rss");
   next();
 });
 
