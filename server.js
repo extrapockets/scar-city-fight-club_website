@@ -5,22 +5,39 @@ const { getSortedHtml } = require("./rss"); // Import the rss.js module
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// To allow cross-origin requests from any domain:
+// app.use(function(req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   next();
+// });
 
-// Set the Content Security Policy
-// Render deployment:'self' is https://scar-city-feed.onrender.com;
-app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "default-src 'self' https://scar-city-branch-csp-change1.onrender.com/rss https://nobsbitcoin.com/rss/ https://inteltechniques.com/blog/feed/ https://feeds.buzzsprout.com/1790481.rss");
-  next();
-});
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://scar-city-branch-csp-change1.onrender.com',
+  'https://nobsbitcoin.com',
+  'https://inteltechniques.com',
+  'https://feeds.buzzsprout.com'
+];
 
-app.get("/rss", async (req, res) => {
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
+
+app.get('/rss', async (req, res) => {
   try {
-    const html = await getSortedHtml(); // Use the getSortedHtml() function
+    const html = await getSortedHtml();
     res.send(html);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send('Internal Server Error');
   }
 });
 
