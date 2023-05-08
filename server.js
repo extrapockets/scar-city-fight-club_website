@@ -8,12 +8,9 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 
 // Set the Content Security Policy
-// img-src 'self' https://scar-city-feed.onrender.com/favicon.ico;
+// Render deployment:'self' is https://scar-city-feed.onrender.com;
 app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; frame-src 'none'; manifest-src 'self'; connect-src 'self'; media-src 'self'; child-src 'self'; worker-src 'self'; script-src-elem 'self' 'unsafe-inline';"
-  );
+  res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' https://nobsbitcoin.com/rss/ https://inteltechniques.com/blog/feed/ https://feeds.buzzsprout.com/1790481.rss");
   next();
 });
 
