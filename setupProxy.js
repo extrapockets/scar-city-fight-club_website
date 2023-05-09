@@ -8,4 +8,5 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
-};// https://jafreitas90.medium.com/how-to-solve-the-cors-issue-in-a-create-react-app-project-with-a-proxy-5403141d7f32
+};
+// https://jafreitas90.medium.com/how-to-solve-the-cors-issue-in-a-create-react-app-project-with-a-proxy-5403141d7f32

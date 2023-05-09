@@ -22,9 +22,10 @@ const allowedOrigins = [
   'https://scar-city-fight-club-website-ennuvopsd-extrapockets.vercel.app/'
 ];
 
+// Set up the CORS options
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin) || !origin) {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -32,6 +33,7 @@ const corsOptions = {
   }
 };
 
+// Use the CORS middleware with the options
 app.use(cors(corsOptions));
 
 app.get('/rss', async (req, res) => {
