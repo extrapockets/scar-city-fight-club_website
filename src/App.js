@@ -6,8 +6,8 @@ import NewsFeed from "./components/NewsFeed";
 const newsFeeds = [
   {
     name: "News:",
-    // change to URL for Render web service deployment
-    url: "https://scar-city-feed.onrender.com",
+    // URL for Render web service deployment
+    url: "https://scar-city-branch-csp-change1.onrender.com/rss",
     // url: "http://localhost:3001/rss",
   },
 ];
