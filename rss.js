@@ -11,8 +11,8 @@ const rssFeeds = [
     url: "https://inteltechniques.com/blog/feed/",
   },
   {
-    name: "Buzzsprout Podcast",
-    url: "https://feeds.buzzsprout.com/1790481.rss",
+    name: "8 Limbs Us",
+    url: "https://8limbsus.com/feed/rss",
   },
 ];
 
